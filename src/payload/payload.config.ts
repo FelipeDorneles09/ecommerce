@@ -146,8 +146,8 @@ export default buildConfig({
     }),
     payloadCloud({
       storage: false, // Disable file storage
-      email: false,   // Disable email delivery
-      uploadCaching: false // Disable upload caching
-    })
+      email: false, // Disable email delivery
+      uploadCaching: false, // Disable upload caching
+    }),
   ],
 })
