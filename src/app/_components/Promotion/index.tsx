@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useMemo, useState } from 'react'
+
 import classes from './index.module.scss'
 
 const Promotion = () => {
