@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import classes from './index.module.scss'
 
@@ -12,7 +12,7 @@ const Promotion = () => {
     seconds: 0,
   })
 
-  const targetDate = useMemo(() => new Date(), [])
+  const targetDate = new Date()
   targetDate.setDate(targetDate.getDate() + 3)
 
   useEffect(() => {
@@ -43,9 +43,9 @@ const Promotion = () => {
       <div className={classes.textBox}>
         <h3 className={classes.title}>Deals of the Month</h3>
         <p>
-          Prepare-se para uma experiência de compras como nunca antes com nossas Ofertas do Mês!
-          Cada compra vem com vantagens e ofertas exclusivas, tornando este mês uma celebração de
-          escolhas inteligentes e ofertas incríveis. Não perca! 🎁🛒
+          Prepare-se para uma experiência de compras como nunca antes com nossas Ofertas do Mês! Cada
+          compra vem com vantagens e ofertas exclusivas, tornando este mês uma celebração de escolhas
+          inteligentes e ofertas incríveis. Não perca! 🎁🛒
         </p>
 
         <ul className={classes.stats}>
