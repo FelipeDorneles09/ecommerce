@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+
 import classes from './index.module.scss'
 
 const Promotion = () => {
@@ -28,23 +29,23 @@ const Promotion = () => {
 
       if (timeDifference === 0) {
         clearInterval(timerInterval)
-        // You can add code here to handle what happens when the target date is reached.
+        // Você pode adicionar código aqui para tratar o que acontece quando a data alvo é atingida.
       }
     }, 1000)
 
     return () => {
-      clearInterval(timerInterval) // Cleanup the interval when the component unmounts.
+      clearInterval(timerInterval) // Limpar o intervalo quando o componente for desmontado.
     }
-  }, []) // Dependency array is empty
+  }, [targetDate]) // Adicione targetDate às dependências
 
   return (
     <section className={classes.promotion}>
       <div className={classes.textBox}>
         <h3 className={classes.title}>Deals of the Month</h3>
         <p>
-          Get ready for a shopping experience like never before with our Deals of the Month! Every
-          purchase comes with exclusive perks and offers, making this month a celebration of savvy
-          choices and amazing deals. Don't miss out! 🎁🛒
+          Prepare-se para uma experiência de compras como nunca antes com nossas Ofertas do Mês! Cada
+          compra vem com vantagens e ofertas exclusivas, tornando este mês uma celebração de escolhas
+          inteligentes e ofertas incríveis. Não perca! 🎁🛒
         </p>
 
         <ul className={classes.stats}>
