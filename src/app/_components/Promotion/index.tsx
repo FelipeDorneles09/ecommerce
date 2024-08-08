@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-
 import classes from './index.module.scss'
 
 const Promotion = () => {
@@ -11,9 +10,13 @@ const Promotion = () => {
     minutes: 0,
     seconds: 0,
   })
-
-  const targetDate = new Date()
-  targetDate.setDate(targetDate.getDate() + 3)
+  
+  // Define a target date apenas uma vez, quando o componente é montado
+  const [targetDate] = useState(() => {
+    const date = new Date()
+    date.setDate(date.getDate() + 3)
+    return date
+  })
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -36,7 +39,7 @@ const Promotion = () => {
     return () => {
       clearInterval(timerInterval) // Limpar o intervalo quando o componente for desmontado.
     }
-  }, [targetDate]) // Adicione targetDate às dependências
+  }, [targetDate]) // targetDate é uma dependência estática e não mudará
 
   return (
     <section className={classes.promotion}>
