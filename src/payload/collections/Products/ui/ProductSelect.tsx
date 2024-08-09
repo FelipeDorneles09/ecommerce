@@ -61,9 +61,7 @@ export const ProductSelect: React.FC<TextField> = props => {
       >
         {`Select the related Stripe product or `}
         <a
-          href={`https://dashboard.stripe.com/${
-            process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-          }products/create`}
+          href={`https://dashboard.stripe.com/products/create`}
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: 'var(--theme-text' }}
@@ -101,9 +99,7 @@ export const ProductSelect: React.FC<TextField> = props => {
             }}
           >
             <a
-              href={`https://dashboard.stripe.com/${
-                process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-              }products/${stripeProductID}`}
+              href={`https://dashboard.stripe.com/products/${stripeProductID}`}
               target="_blank"
               rel="noreferrer noopener"
             >

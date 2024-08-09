@@ -8,9 +8,7 @@ export const LinkToPaymentIntent: React.FC<TextField> = props => {
 
   const { value: stripePaymentIntentID } = useFormFields(([fields]) => fields[name]) || {}
 
-  const href = `https://dashboard.stripe.com/${
-    process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-  }payments/${stripePaymentIntentID}`
+  const href = `https://dashboard.stripe.com/payments/${stripePaymentIntentID}`
 
   return (
     <div>
@@ -39,9 +37,7 @@ export const LinkToPaymentIntent: React.FC<TextField> = props => {
             }}
           >
             <a
-              href={`https://dashboard.stripe.com/${
-                process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-              }customers/${stripePaymentIntentID}`}
+              href={`https://dashboard.stripe.com/customers/${stripePaymentIntentID}`}
               target="_blank"
               rel="noreferrer noopener"
             >
