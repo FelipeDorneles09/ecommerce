@@ -10,5 +10,6 @@ module.exports = {
     'no-console': 'off',
     'eol-last': 'off',
   },
+  
 }
 
