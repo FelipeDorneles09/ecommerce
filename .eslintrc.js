@@ -8,6 +8,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'off',  // Desabilita o Prettier temporariamente
     'no-console': 'off',
+    'eol-last': 'off',
   },
 }
 
