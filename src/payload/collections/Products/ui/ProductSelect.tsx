@@ -48,9 +48,7 @@ export const ProductSelect: React.FC<TextField> = props => {
     getStripeProducts()
   }, [])
 
-  const href = `https://dashboard.stripe.com/${
-    process.env.PAYLOAD_PUBLIC_STRIPE_IS_TEST_KEY ? 'test/' : ''
-  }products/${stripeProductID}`
+  const href = `https://dashboard.stripe.com/products/${stripeProductID}`
 
   return (
     <div>

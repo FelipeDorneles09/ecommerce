@@ -3,7 +3,6 @@
 import React, { useCallback } from 'react'
 import { PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { useRouter } from 'next/navigation'
-
 import { Order } from '../../../../payload/payload-types'
 import { Button } from '../../../_components/Button'
 import { Message } from '../../../_components/Message'
@@ -21,13 +20,19 @@ export const CheckoutForm: React.FC<{}> = () => {
   const { cart, cartTotal } = useCart()
 
   const handleSubmit = useCallback(
-    async e => {
+    async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       setIsLoading(true)
 
+      if (!stripe || !elements) {
+        setError('Stripe has not loaded properly.')
+        setIsLoading(false)
+        return
+      }
+
       try {
-        const { error: stripeError, paymentIntent } = await stripe?.confirmPayment({
-          elements: elements!,
+        const { error: stripeError, paymentIntent } = await stripe.confirmPayment({
+          elements,
           redirect: 'if_required',
           confirmParams: {
             return_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/order-confirmation`,
@@ -37,13 +42,10 @@ export const CheckoutForm: React.FC<{}> = () => {
         if (stripeError) {
           setError(stripeError.message)
           setIsLoading(false)
+          return
         }
 
         if (paymentIntent) {
-          // Before redirecting to the order confirmation page, we need to create the order in Payload
-          // Cannot clear the cart yet because if you clear the cart while in the checkout
-          // you will be redirected to the `/cart` page before this redirect happens
-          // Instead, we clear the cart in an `afterChange` hook on the `orders` collection in Payload
           try {
             const orderReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/orders`, {
               method: 'POST',
@@ -80,8 +82,6 @@ export const CheckoutForm: React.FC<{}> = () => {
 
             router.push(`/order-confirmation?order_id=${doc.id}`)
           } catch (err) {
-            // don't throw an error if the order was not created successfully
-            // this is because payment _did_ in fact go through, and we don't want the user to pay twice
             console.error(err.message) // eslint-disable-line no-console
             router.push(`/order-confirmation?error=${encodeURIComponent(err.message)}`)
           }
