@@ -48,14 +48,14 @@ const Filters = ({ categories }: { categories: Category[] }) => {
         <h6 className={classes.title}>Filtrar por</h6>
         <div className={classes.categories}>
           <RadioButton
-            label="Latest"
+            label="Recentes"
             value="-createdAt"
             isSelected={sort === '-createdAt'}
             onRadioChange={handleSort}
             groupName="sort"
           />
           <RadioButton
-            label="Oldest"
+            label="Antigos"
             value="createdAt"
             isSelected={sort === 'createdAt'}
             onRadioChange={handleSort}
