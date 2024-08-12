@@ -45,7 +45,7 @@ const Promotion = () => {
   return (
     <section className={classes.promotion}>
       <div className={classes.textBox}>
-        <h3 className={classes.title}>Deals of the Month</h3>
+        <h3 className={classes.title}>Promoções do mês</h3>
         <p>
           Prepare-se para uma experiência de compras como nunca antes com nossas Ofertas do Mês! Cada
           compra vem com vantagens e ofertas exclusivas, tornando este mês uma celebração de escolhas
