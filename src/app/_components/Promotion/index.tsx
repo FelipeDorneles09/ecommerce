@@ -53,10 +53,10 @@ const Promotion = () => {
         </p>
 
         <ul className={classes.stats}>
-          <StatBox label="Days" value={time.days} />
-          <StatBox label="Hours" value={time.hours} />
-          <StatBox label="Minutes" value={time.minutes} />
-          <StatBox label="Seconds" value={time.seconds} />
+          <StatBox label="Dias" value={time.days} />
+          <StatBox label="Horas" value={time.hours} />
+          <StatBox label="Minutos" value={time.minutes} />
+          <StatBox label="Segundos" value={time.seconds} />
         </ul>
       </div>
     </section>
