@@ -97,13 +97,13 @@ const AccountForm: React.FC = () => {
         <Fragment>
           <Input
             name="email"
-            label="Email Address"
+            label="Email"
             required
             register={register}
             error={errors.email}
             type="email"
           />
-          <Input name="name" label="Name" register={register} error={errors.name} />
+          <Input name="name" label="Nome" register={register} error={errors.name} />
 
           <p>
             {'Edite os detalhes da sua conta, ou '}
