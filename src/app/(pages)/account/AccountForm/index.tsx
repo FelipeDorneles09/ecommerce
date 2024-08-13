@@ -120,15 +120,15 @@ const AccountForm: React.FC = () => {
       ) : (
         <Fragment>
           <p>
-            {'Change your password below, or '}
+            {'Troque a sua senha abaixo, ou '}
             <button
               type="button"
               className={classes.changePassword}
               onClick={() => setChangePassword(!changePassword)}
             >
-              cancel
+              volte 
             </button>
-            .
+            para os detalhes da sua conta.
           </p>
           <Input
             name="password"
