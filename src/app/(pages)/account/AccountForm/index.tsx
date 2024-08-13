@@ -128,7 +128,7 @@ const AccountForm: React.FC = () => {
             >
                volte 
             </button>
-            para os detalhes da sua conta.
+            {' para os detalhes da sua conta.'}
           </p>
           <Input
             name="password"
