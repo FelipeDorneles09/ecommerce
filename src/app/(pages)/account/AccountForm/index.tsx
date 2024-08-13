@@ -126,7 +126,7 @@ const AccountForm: React.FC = () => {
               className={classes.changePassword}
               onClick={() => setChangePassword(!changePassword)}
             >
-              volte 
+               volte 
             </button>
             para os detalhes da sua conta.
           </p>
