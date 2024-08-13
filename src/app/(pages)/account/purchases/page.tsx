@@ -17,7 +17,7 @@ export default async function Purchases() {
 
   return (
     <div>
-      <h5>Purchased Products</h5>
+      <h5>Produtos comprados</h5>
       <div>
         {user?.purchases?.length || 0 > 0 ? (
           <ul className={classes.purchases}>
