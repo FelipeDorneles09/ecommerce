@@ -23,22 +23,22 @@ export const inclusions = [
 
 export const profileNavItems = [
   {
-    title: 'Personal Information',
+    title: 'Informações pessoais',
     url: '/account',
     icon: '/assets/icons/user.svg',
   },
   {
-    title: 'My Purchases',
+    title: 'Minhas compras',
     url: '/account/purchases',
     icon: '/assets/icons/purchases.svg',
   },
   {
-    title: 'My Orders',
+    title: 'Meus pedidos',
     url: '/account/orders',
     icon: '/assets/icons/orders.svg',
   },
   {
-    title: 'Logout',
+    title: 'Sair',
     url: '/logout',
     icon: '/assets/icons/logout.svg',
   },
