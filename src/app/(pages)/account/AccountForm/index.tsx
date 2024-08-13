@@ -106,15 +106,15 @@ const AccountForm: React.FC = () => {
           <Input name="name" label="Name" register={register} error={errors.name} />
 
           <p>
-            {'Change your account details below, or '}
+            {'Edite os detalhes da sua conta, ou '}
             <button
               type="button"
               className={classes.changePassword}
               onClick={() => setChangePassword(!changePassword)}
             >
-              click here
+              clique aqui
             </button>
-            {' to change your password.'}
+            {' para alterar sua senha.'}
           </p>
         </Fragment>
       ) : (
