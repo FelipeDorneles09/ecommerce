@@ -133,7 +133,7 @@ const AccountForm: React.FC = () => {
           <Input
             name="password"
             type="password"
-            label="Password"
+            label="Senha"
             required
             register={register}
             error={errors.password}
@@ -141,7 +141,7 @@ const AccountForm: React.FC = () => {
           <Input
             name="passwordConfirm"
             type="password"
-            label="Confirm Password"
+            label="Confirmar senha"
             required
             register={register}
             validate={value => value === password.current || 'The passwords do not match'}
@@ -151,7 +151,7 @@ const AccountForm: React.FC = () => {
       )}
       <Button
         type="submit"
-        label={isLoading ? 'Processing' : changePassword ? 'Change Password' : 'Update Account'}
+        label={isLoading ? 'Processando' : changePassword ? 'Trocar senha' : 'Alterar informações'}
         disabled={isLoading}
         appearance="primary"
         className={classes.submit}
