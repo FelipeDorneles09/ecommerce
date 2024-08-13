@@ -21,7 +21,7 @@ export const LogoutPage: React.FC<{
         await logout()
         setSuccess('Você saiu com sucesso.')
       } catch (_) {
-        setError('You are already logged out.')
+        setError('Você já saiu.')
       }
     }
 
